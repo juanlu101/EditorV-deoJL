@@ -24,30 +24,6 @@ Editor de vídeo que funciona entero en el navegador, al estilo de Clipchamp o C
 - Ordenador con 8 GB de RAM o más (un i3 de 12.ª generación con 16 GB va sobrado para 1080p).
 - La página tiene que abrirse desde una dirección web (`https://…`). **No funciona** si se abre `index.html` con doble clic.
 
-## Publicarlo (elige una opción)
-
-### Opción A: Netlify (la más sencilla, unos 3 minutos)
-
-1. Crea una cuenta gratuita en <https://app.netlify.com/signup> (con Google o GitHub).
-2. Entra en <https://app.netlify.com/drop>.
-3. Descomprime el ZIP y **arrastra la carpeta `editor-video`** (la que contiene `index.html`) a la página.
-4. En unos segundos tendrás una dirección del tipo `https://nombre-raro-123.netlify.app`. En *Site configuration → Change site name* puedes cambiarla por algo como `https://editor-1bach.netlify.app`.
-5. Ese es el enlace para tus estudiantes.
-
-> Importante: sin iniciar sesión, Netlify borra el sitio al cabo de una hora. Con la cuenta creada, se queda publicado.
-
-Para actualizarlo más adelante: *Deploys* → arrastra de nuevo la carpeta.
-
-### Opción B: GitHub Pages
-
-1. Crea un repositorio público en GitHub (por ejemplo `editor-video`).
-2. Pulsa *Add file → Upload files* y sube **el contenido** de la carpeta (`index.html`, `css/`, `js/`, `lib/`, `.nojekyll`).
-3. Ve a *Settings → Pages*, en *Source* elige *Deploy from a branch*, rama `main` y carpeta `/ (root)`. Guarda.
-4. Al cabo de un minuto estará en `https://TU-USUARIO.github.io/editor-video/`.
-
-### Probarlo en tu ordenador sin publicarlo
-
-Con Python instalado, abre una terminal dentro de la carpeta y ejecuta `python -m http.server 8000`. Después abre <http://localhost:8000>.
 
 ## Notas para el profesorado
 
@@ -57,13 +33,5 @@ Con Python instalado, abre una terminal dentro de la carpeta y ejecuta `python -
 - **Velocidad de exportación:** los MP4 normales (de móvil o cámara) se decodifican y codifican con aceleración por hardware, así que la exportación suele ir más rápida que el propio vídeo. Las grabaciones hechas dentro del editor y algunos formatos raros usan un método más lento. El MP4 se guarda en la carpeta Descargas.
 - **Música:** recuérdales que usen música libre de derechos (por ejemplo, la biblioteca de audio de YouTube) si van a publicar los vídeos.
 
-## Estructura
-
-```
-index.html        Página principal
-css/styles.css    Estilos
-js/               Código del editor (módulos ES, sin compilación)
-lib/              mp4-muxer (MIT) y mp4box.js (BSD-3) para MP4
-```
 
 Iconos: Lucide (ISC). Fuentes: Google Fonts (OFL).
